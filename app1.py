@@ -1,11 +1,17 @@
+import os
+from dotenv import load_dotenv
 import streamlit as st
 import pdfplumber
 from pdf2image import convert_from_bytes
 import pytesseract
 import openai
 
+
+# Load environment variables from .env
+load_dotenv()
+
 # Set your OpenAI API key
-openai.api_key = "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"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 st.title("Medical Lab Report Parser")
 
